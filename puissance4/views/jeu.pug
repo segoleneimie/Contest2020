@@ -1,4 +1,11 @@
 extends layout
 
 block content
-    h1= title
+    h2 Choisissez votre mode de jeu
+    form(action='/vsordi' method='GET')
+        div(class="for-group")
+        button(type="submit" class="btn btn-secondary") contre ordinateur
+    form(action='/vsadversaire' method='GET')
+        div(class="for-group")
+        button(type="submit" class="btn btn-secondary") contre adversaire
+

@@ -34,7 +34,7 @@ indexRouter.post('/jeu', (req, res, next)=>{
 /**
  * création du compte
  */
-indexRouter.post('/',(req, res, next) =>{
+indexRouter.post('/jeu1',(req, res, next) =>{
     const{pseudo, mdp} = req.body;
     mySqlConnection.query(`INSERT INTO user(pseudo, mdp) VALUES ('${pseudo}', '${mdp}');`,
         (err, rows, field)=>{
