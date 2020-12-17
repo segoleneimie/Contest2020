@@ -1,18 +1,15 @@
 import mysql from 'mysql';
-
 import createError from "http-errors";
-
 import express from "express";
-
 import path from "path";
-
 import cookieParser from "cookie-parser";
-
 import logger from "morgan";
+import bodyParser from "body-parser";
+
 
 import {indexRouter} from "./routes/index.js";
-
 import {usersRouter }from "./routes/users.js";
+import {jeuRouter} from "./routes/jeu.js";
 
 const app = express();
 const __dirname = path.resolve(path.dirname(''));
@@ -25,9 +22,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.json());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/jeu', jeuRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
