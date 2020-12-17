@@ -1,5 +1,16 @@
+
+
 extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  h1 connexion
+  form(action='/dashboard/login/' method='POST')
+    div(class="form-group")
+      label(for='login') Login:
+        input(id="login" type='login', placeholder='Login' name='login')
+    div(class="form-group")
+      label(for='password') Password:
+        input(id="password" type='password', placeholder='password' name='password')
+    //button(type="submit" class="btn btn-primary") Connexion
+    a(href=`/dashboard` class="btn btn-primary btn-lg active" role="button" aria-pressed="true") Connexion

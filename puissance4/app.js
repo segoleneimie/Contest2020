@@ -1,14 +1,21 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import mysql from 'mysql';
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+import createError from "http-errors";
 
-var app = express();
+import express from "express";
 
+import path from "path";
+
+import cookieParser from "cookie-parser";
+
+import logger from "morgan";
+
+import {indexRouter} from "./routes/index.js";
+
+import {usersRouter }from "./routes/users.js";
+
+const app = express();
+const __dirname = path.resolve(path.dirname(''));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -38,4 +45,19 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+export const mySqlConnection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  multipleStatements: true,
+  database: 'puissance_quatre'
+});
+
+mySqlConnection.connect(err => {
+  if (err) throw err;
+  else {
+    app.listen(3000, () => {
+      console.log('Server listening...');
+    });
+  }
+});
