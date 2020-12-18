@@ -1,13 +1,21 @@
 import express from "express";
 import {mySqlConnection} from "../app.js";
 
+import {
+    checkPuissance4,
+    ChoseCol,
+    ChoseColComputer,
+    insertBoardGame,
+    insertBoardGameComputer,
+    newGame
+} from "../public/javascripts/function.js";
 export const vsOrdiRouter = express.Router();
 
 vsOrdiRouter.get('/', function(req, res, next) {
     res.render('vsordi');
 });
 
-<<<<<<< HEAD
+
 let player = 1 ; // a modifier
 let board = newGame();
 let signPlayer = 'R';
@@ -16,8 +24,9 @@ let columnPlayer = ChoseCol(player);
 let lign1 = insertBoardGame(columnPlayer, board, signPlayer, player);
 let columnComputer = ChoseColComputer();
 let lignComputer = insertBoardGameComputer(columnComputer, board, signComputer);
-while (checkPuissance4(columnPlayer, lign1, board, signPlayer) != true||
-checkPuissance4(columnComputer, lignComputer, board, signComputer) != true){
+
+while (checkPuissance4(columnPlayer, lign1, board, signPlayer) !== true||
+checkPuissance4(columnComputer, lignComputer, board, signComputer) !== true){
     columnPlayer = ChoseCol(player);
     lign1 = insertBoardGame(columnPlayer, board, signPlayer, player);
     if(!checkPuissance4(columnPlayer, lign1, board, player)){
@@ -31,7 +40,6 @@ checkPuissance4(columnComputer, lignComputer, board, signComputer) != true){
         console.log("Vous avez gagné contre l'ordinateur");
     }
 }
-=======
 /**
  * permet de controler la connexion
  */
@@ -55,4 +63,3 @@ vsOrdiRouter.post('/', (req, res, next)=>{
         });
     }
 );
->>>>>>> 285f20336e82d07fb2d2fb86fa7a055837636f43
