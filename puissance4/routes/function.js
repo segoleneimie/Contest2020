@@ -48,6 +48,25 @@ function insertBoardGame(column, board, signPlayer, player){
     return ligne;
 }
 
+function insertBoardGameComputer(column, board, signPlayer){
+    let ligne = 0;
+    if (checkColumnFull(column, board) != 6){
+        let i = 0;
+        while (board[column][i] == 0){
+            i++;
+        }
+        board[column][i] = signPlayer;
+        ligne = i;
+        console.log(board);
+    }
+    else{
+        console.log("veuillez choisir une autre colonne ! ");
+        ChoseCol(player);
+        insertBoardGameComputer(column, board, signPlayer);
+    }
+    return ligne;
+}
+
 function checkLigne(lign, board, signPlayer){
     let nbAligne = 1;
     for (let i = 1; i<4; i++){
