@@ -2,47 +2,18 @@ extends layout
 block content
     h1 Jouer contre un adversaire
 
-    p Connexion joueur 1
-    form(action='/' method='POST')
+    form(action='/vsadversaire' method='POST')
         div(class="form-group")
-            label(for='pseudoConnexion1') Pseudo:
+            label(for='pseudoConnexion1') Pseudo joueur 1:
                 input(id="pseudoConnexion1" type='pseudo', placeholder='pseudo' name='pseudoConnexion1')
-        div(class="form-group")
-            label(for='mdpConnexion1') Password:
-                input(id="mdpConnexion1" type='password', placeholder='password' name='mdpConnexion1')
-        button(type="submit" class="btn btn-primary") Connexion
-
-
-    h2 Si vous n'avez pas encore de compte
-    p Création du compte
-    form(action='/' method='POST')
-        div(class="form-group")
-            label(for='pseudo1') Pseudo:
-                input(id="pseudo1" type='pseudo', placeholder='pseudo' name='pseudo1')
-        div(class="form-group")
-            label(for='mdp1') Password:
-                input(id="mdp1" type='password', placeholder='password' name='mdp1')
-        button(type="submit" class="btn btn-primary") Créer mon compte
-
-
-    p Connexion joueur 2
-    form(action='/' method='POST')
-        div(class="form-group")
-            label(for='pseudoConnexion2') Pseudo:
+            label(for='pseudoConnexion2') Pseudo joueur 2:
                 input(id="pseudoConnexion2" type='pseudo', placeholder='pseudo' name='pseudoConnexion2')
         div(class="form-group")
-            label(for='mdpConnexion2') Password:
+            label(for='mdpConnexion1') Password joueur 1:
+                input(id="mdpConnexion1" type='password', placeholder='password' name='mdpConnexion1')
+            label(for='mdpConnexion2') Password joueur 2:
                 input(id="mdpConnexion2" type='password', placeholder='password' name='mdpConnexion2')
         button(type="submit" class="btn btn-primary") Connexion
 
 
-    h2 Si vous n'avez pas encore de compte
-    p Création du compte
-    form(action='/' method='POST')
-        div(class="form-group")
-            label(for='pseudo2') Pseudo:
-                input(id="pseudo2" type='pseudo', placeholder='pseudo' name='pseudo2')
-        div(class="form-group")
-            label(for='mdp2') Password:
-                input(id="mdp2" type='password', placeholder='password' name='mdp2')
-        button(type="submit" class="btn btn-primary") Créer mon compte
+

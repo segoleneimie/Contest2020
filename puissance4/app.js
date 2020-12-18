@@ -13,6 +13,7 @@ import {vsOrdiRouter} from "./routes/vsordi.js";
 import {vsAdversaireRouter} from "./routes/vsadversaire.js";
 import {boardOrdiRouter} from "./routes/boardordi.js";
 import {creationcompteRouter} from "./routes/creationcompte.js";
+import  {boardadversaireRouter} from './routes/boardadversaire.js'
 
 
 const app = express();
@@ -33,6 +34,7 @@ app.use('/vsordi', vsOrdiRouter);
 app.use('/vsadversaire', vsAdversaireRouter);
 app.use('/boardordi', boardOrdiRouter);
 app.use('/creationcompte', creationcompteRouter);
+app.use('/boardadversaire', boardadversaireRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
