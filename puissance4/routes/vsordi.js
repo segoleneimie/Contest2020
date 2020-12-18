@@ -26,22 +26,7 @@ vsOrdiRouter.post('/', (req, res, next)=>{
                     res.sendStatus(401);
                 }
 
-
             }
         });
     }
 );
-
-/**
- * création du compte
- */
-// vsOrdiRouter.post('/vsordi/boardordi',(req, res, next) =>{
-//     const{pseudo, mdp} = req.body;
-//     mySqlConnection.query(`INSERT INTO user(pseudo, mdp) VALUES ('${pseudo}', '${mdp}');`,
-//         (err, rows, field)=>{
-//             if (err) throw err;
-//             res.locals = {joueur1 : pseudoConnexion};
-//             res.render('boardordi', res.locals);
-//         })
-//
-// });
