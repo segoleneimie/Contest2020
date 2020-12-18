@@ -135,9 +135,9 @@ function checkDiagonal2(lign, column, board, signPlayer){
 function checkPuissance4(column, lign, board, signPlayer){
     let estPuissance4 = false;
     if(checkColumn(column, board, signPlayer) == 4 ||
-    checkLigne(lign, board, signPlayer) == 4 ||
-    checkDiagonal1(lign, column, board, signPlayer) == 4 ||
-    checkDiagonal2(lign, column, board, signPlayer) == 4){
+        checkLigne(lign, board, signPlayer) == 4 ||
+        checkDiagonal1(lign, column, board, signPlayer) == 4 ||
+        checkDiagonal2(lign, column, board, signPlayer) == 4){
         estPuissance4 = true
     }
     return estPuissance4;
