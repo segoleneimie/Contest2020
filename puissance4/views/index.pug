@@ -1,28 +1,5 @@
 extends layout
 
 block content
-  h1= title
-  h1 Connexion
-  form(action='/jeu' method='POST')
-    div(class="form-group")
-      label(for='pseudoConnexion') Pseudo:
-        input(id="pseudoConnexion" type='pseudo', placeholder='pseudo' name='pseudoConnexion')
-    div(class="form-group")
-      label(for='mdpConnexion') Password:
-        input(id="mdpConnexion" type='password', placeholder='password' name='mdpConnexion')
-    button(type="submit" class="btn btn-primary") Connexion
-
-
-  h2 Si vous n'avez pas encore de compte
-  h1 Création du compte
-  form(action='/jeu1' method='POST')
-    div(class="form-group")
-      label(for='pseudo') Pseudo:
-        input(id="pseudo" type='pseudo', placeholder='pseudo' name='pseudo')
-    div(class="form-group")
-      label(for='mdp') Password:
-        input(id="mdp" type='password', placeholder='password' name='mdp')
-    button(type="submit" class="btn btn-primary") Créer mon compte
-
-
-    //a(href=`/` class="btn btn-primary btn-lg active" role="button" aria-pressed="true") Créer mon compte
+  include jeu.pug
+  a(href=`/creationcompte` class="btn btn-primary btn-lg active" role="button" aria-pressed="true") Créer mon compte

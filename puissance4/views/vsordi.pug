@@ -1,4 +1,17 @@
-include jeu.pug
+extends layout
 
 block content
     h1 Jouer contre l'ordi
+    p veuillez vous connecter
+
+    form(action='/vsordi' method='POST')
+        div(class="form-group")
+            label(for='pseudoConnexion') Pseudo:
+                input(id="pseudoConnexion" type='pseudo', placeholder='pseudo' name='pseudoConnexion')
+        div(class="form-group")
+            label(for='mdpConnexion') Password:
+                input(id="mdpConnexion" type='password', placeholder='password' name='mdpConnexion')
+        button(type="submit" class="btn btn-primary") Connexion
+
+
+

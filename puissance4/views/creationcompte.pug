@@ -1,0 +1,12 @@
+extends layout
+block content
+    h2 Si vous n'avez pas encore de compte
+    p Création du compte
+    form(action='/creationcompte' method='POST')
+        div(class="form-group")
+            label(for='pseudo') Pseudo:
+                input(id="pseudo" type='pseudo', placeholder='pseudo' name='pseudo')
+        div(class="form-group")
+            label(for='mdp') Password:
+                input(id="mdp" type='password', placeholder='password' name='mdp')
+        button(type="submit" class="btn btn-primary") Créer mon compte
